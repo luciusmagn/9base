@@ -12,8 +12,8 @@ OBJTYPE     = 386
 
 # Linux/BSD
 #CFLAGS      += -Wall -Wno-missing-braces -Wno-parentheses -Wno-switch -c -I. -DPREFIX="\"${PREFIX}\""
-CFLAGS      += -c -I. -DPLAN9PORT -DPREFIX="\"${PREFIX}\"" -Os
-LDFLAGS     += -static
+CFLAGS      += -c -I. -DPLAN9PORT -DPREFIX="\"${PREFIX}\"" -Os -static -fPIC -lrt -ffunction-sections -fdata-sections
+LDFLAGS     += -s -static -Wl,--gc-sections
 
 # Solaris
 #CFLAGS      = -fast -xtarget=ultra -D__sun__ -c -I. -DPREFIX="\"${PREFIX}\""
@@ -21,5 +21,4 @@ LDFLAGS     += -static
 
 # compiler
 AR          = ar rc
-CC          = cc
 YACC        = ../yacc/9yacc
