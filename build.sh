@@ -21,5 +21,9 @@ echo "= setting CC to musl-gcc"
 export CC=${working_dir}/musl-install/bin/musl-gcc
 export CFLAGS="$CFLAGS -static -fPIC"
 
+ln -s /usr/bin/include/linux musl-install/include/linux
+ln -s /usr/bin/include/asm musl-install/include/linux
+ln -s /usr/bin/include/asm-generic musl-install/include/asm-generic
+
 make
 

@@ -2,7 +2,9 @@
 
 include config.mk
 
-SUBDIRS  = awk\
+SUBDIRS  = lib9\
+	yacc\
+	awk\
 	diff\
 
 all:
